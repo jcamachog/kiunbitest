@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { finalize } from 'rxjs/operators';
-
-import { QuoteService } from './quote.service';
+import { KiunbiFirestoreService } from '../services/kiunbi-firestore.service';
 
 @Component({
   selector: 'app-home',
@@ -9,22 +7,23 @@ import { QuoteService } from './quote.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  quote: string | undefined;
-  isLoading = false;
+  selectedNumber: number;
+  array: Array<number> = [];
+  enableCalculate: boolean = true;
 
-  constructor(private quoteService: QuoteService) {}
+  constructor(private kiunbiFirestoreService: KiunbiFirestoreService) {}
 
-  ngOnInit() {
-    this.isLoading = true;
-    this.quoteService
-      .getRandomQuote({ category: 'dev' })
-      .pipe(
-        finalize(() => {
-          this.isLoading = false;
-        })
-      )
-      .subscribe((quote: string) => {
-        this.quote = quote;
-      });
+  ngOnInit() {}
+
+  calculate() {
+    this.enableCalculate = false;
+    this.array = Array.from({ length: this.selectedNumber }, (v, k) => k + 1);
+    this.kiunbiFirestoreService.startRequest(this.selectedNumber);
+  }
+
+  reset() {
+    this.selectedNumber = 0;
+    this.enableCalculate = true;
+    this.array = [];
   }
 }

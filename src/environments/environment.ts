@@ -12,6 +12,15 @@ import { env } from './.env';
 
 export const environment = {
   production: false,
+  firebaseConfig: {
+    apiKey: 'AIzaSyCwNfkpCgRIeIQvaHRogdZNxCmCPQLNEeg',
+    authDomain: 'kiunbitest.firebaseapp.com',
+    databaseURL: 'https://kiunbitest.firebaseio.com',
+    projectId: 'kiunbitest',
+    storageBucket: 'kiunbitest.appspot.com',
+    messagingSenderId: '516431274376',
+    appId: '1:516431274376:web:fb5517aa286823991bda3d',
+  },
   hmr: true,
   version: env.npm_package_version + '-dev',
   serverUrl: '/api',

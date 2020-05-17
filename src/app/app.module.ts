@@ -14,6 +14,9 @@ import { HomeModule } from './home/home.module';
 import { ShellModule } from './shell/shell.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { KiunbiFirestoreService } from './services/kiunbi-firestore.service';
 
 @NgModule({
   imports: [
@@ -29,9 +32,11 @@ import { AppRoutingModule } from './app-routing.module';
     ShellModule,
     HomeModule,
     AppRoutingModule, // must be imported as the last module as it contains the fallback route
+    AngularFireModule.initializeApp(environment.firebaseConfig, 'kiubitest'),
+    AngularFireDatabaseModule,
   ],
   declarations: [AppComponent],
-  providers: [],
+  providers: [KiunbiFirestoreService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

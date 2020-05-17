@@ -1,14 +1,19 @@
 <div class="container">
   <mat-card>
-    <p>
-      <img class="logo" src="assets/ngx-rocket-logo.png" alt="angular logo" />
-    </p>
     <mat-card-content>
-      <mat-card-title translate>Hello world !</mat-card-title>
-      <mat-card-subtitle>
-        <app-loader [isLoading]="isLoading" size="1.5"></app-loader>
-        <q [hidden]="isLoading">{{ quote }}</q>
-      </mat-card-subtitle>
+      <mat-card-title translate>KiunbiTest</mat-card-title>
+      <label>Introduce un número: </label>
+      <input
+        type="number"
+        [(ngModel)]="selectedNumber"
+        onkeypress="return event.charCode >= 48"
+        min="1"
+        step="1"
+        required
+      />
+      <button mat-raised-button color="primary" (click)="calculate()" [disabled]="!enableCalculate">Calcular</button>
+      <button mat-raised-button color="primary" (click)="reset()" [disabled]="enableCalculate">Limpiar</button>
+      <app-kiunbi *ngFor="let item of array" currentValue="{{ item }}" initialValue="{{ selectedNumber }}"></app-kiunbi>
     </mat-card-content>
   </mat-card>
 </div>
