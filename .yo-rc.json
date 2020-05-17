@@ -1,0 +1,57 @@
+{
+  "generator-ngx-rocket": {
+    "version": "8.1.0",
+    "props": {
+      "location": "path",
+      "strict": false,
+      "skipInstall": false,
+      "skipQuickstart": false,
+      "initGit": true,
+      "usePrefix": true,
+      "appName": "kiunbitest",
+      "target": ["web"],
+      "pwa": true,
+      "ui": "material",
+      "layout": "simple",
+      "auth": false,
+      "lazy": true,
+      "angulartics": false,
+      "languages": ["es-ES"],
+      "tools": ["prettier", "hads"],
+      "utility": [],
+      "deploy": "firebase",
+      "projectName": "kiunbitest",
+      "packageManager": "npm",
+      "mobile": [],
+      "desktop": []
+    }
+  },
+  "generator-addon-firebase": {
+    "version": "3.0.1",
+    "props": {
+      "firebaseDeploy": true,
+      "appName": "kiunbitest",
+      "projectName": "kiunbitest",
+      "packageManager": "npm",
+      "location": "path",
+      "strict": false,
+      "skipInstall": false,
+      "skipQuickstart": false,
+      "initGit": true,
+      "usePrefix": true,
+      "target": ["web"],
+      "pwa": true,
+      "ui": "material",
+      "layout": "simple",
+      "auth": false,
+      "lazy": true,
+      "angulartics": false,
+      "languages": ["es-ES"],
+      "tools": ["prettier", "hads"],
+      "utility": [],
+      "deploy": "firebase",
+      "mobile": [],
+      "desktop": []
+    }
+  }
+}

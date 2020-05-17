@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "kiunbi": "kiunbitest"
+  },
+  "targets": {
+    "kiunbitest": {
+      "hosting": {
+        "kiunbitest": [
+          "kiunbitest"
+        ]
+      }
+    }
+  }
+}
